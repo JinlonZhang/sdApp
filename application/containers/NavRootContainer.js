@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 import { push, pop } from '../actions/navActions';
 import React from 'react';
 import { NavigationExperimental } from 'react-native';
+import Home from '../components/Home';
+import About from '../components/About';
 const { NavigationCardStack } = NavigationExperimental;
 
 const mapStateToProps = (state) => {
