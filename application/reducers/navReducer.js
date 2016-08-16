@@ -24,7 +24,7 @@ function navigationState(state=initialState, action) {
     case POP_ROUTE:
       if (state.index === 0 || state.routes.length === 1) // why not only length to check?
         return state;
-      return NavigationStateUtils.pop();
+      return NavigationStateUtils.pop(state);
 
     default:
       return state;

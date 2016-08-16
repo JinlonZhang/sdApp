@@ -4,7 +4,9 @@ import React from 'react';
 import { NavigationExperimental } from 'react-native';
 import Home from '../components/Home';
 import About from '../components/About';
-const { NavigationCardStack } = NavigationExperimental;
+const {
+  CardStack: NavigationCardStack
+} = NavigationExperimental
 
 const mapStateToProps = (state) => {
   return {
@@ -12,7 +14,7 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispath) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     pushRoute: (route) => dispatch(push(route)),
     popRoute: () => dispatch(pop())
