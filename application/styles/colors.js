@@ -1,6 +1,8 @@
 export default Colors = {
-  brandPrimary: '#3A7BD2',
+  brandPrimary: '#CA2906',
   brandPrimaryDark: '#215191',
+  inactiveTab: 'black',
+  activeTab: 'white',
   inactive: '#EBEEF5',
   highlight: '#FFFF8D',
   copyLight: "#bbb",

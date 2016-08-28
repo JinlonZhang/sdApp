@@ -4,7 +4,6 @@ import {
   Text,
   StyleSheet
 } from 'react-native'
-import Button from './Button'
 
 const route = {
   type: 'push',
@@ -16,8 +15,6 @@ const route = {
 
 const Home = ({_handleNavigate}) => (
   <View style={styles.container}>
-    <Text style={styles.title}>Home</Text>
-    <Button onPress={() => _handleNavigate(route)} label='Go To About' />
   </View>
 )
 
@@ -32,4 +29,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default Home
+export default Home;

@@ -60,7 +60,7 @@ class NavRootContainer extends React.Component {
   render() {
     return (
       <NavigationCardStack
-        direction='vertical'
+        direction='horizontal'
         navigationState={this.props.navigation}
         onNavigate={this._handleNavigate}
         renderScene={this._renderScene}
