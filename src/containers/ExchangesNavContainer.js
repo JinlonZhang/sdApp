@@ -2,8 +2,8 @@ import { connect } from 'react-redux';
 import { push, pop } from '../actions/navActions';
 import React from 'react';
 import { NavigationExperimental } from 'react-native';
-import Home from '../components/Home';
-import About from '../components/About';
+import Exchanges from '../components/Exchanges';
+import ExchangeRequest from '../components/ExchangeRequest';
 const {
   CardStack: NavigationCardStack
 } = NavigationExperimental
@@ -21,18 +21,18 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-class NavRootContainer extends React.Component {
+class ExchangesNavContainer extends React.Component {
   constructor(props) {
     super(props);
   }
 
   _renderScene = (props) => {
     const { route } = props.scene;
-    if (route.key === 'home') {
-     return <Home _handleNavigate={this._handleNavigate.bind(this)} />
+    if (route.key === 'exchanges') {
+     return <Exchanges _handleNavigate={this._handleNavigate.bind(this)} />
     }
-    if (route.key === 'about') {
-     return <About _goBack={this._handleBackAction.bind(this)} />
+    if (route.key === 'exchangerequest') {
+     return <ExchangeRequest _handleNavigate={this._handleNavigate.bind(this)} />
     }
   }
 
@@ -70,4 +70,4 @@ class NavRootContainer extends React.Component {
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(NavRootContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(ExchangesNavContainer);
