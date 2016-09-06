@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import ShiftCalendar from './schedule/ShiftCalendar';
 import moment from 'moment';
+import Colors from '../styles/colors';
+import NavigationBar from 'react-native-navbar';
 
 class Schedule extends Component {
   componentDidMount() {
@@ -23,14 +25,21 @@ class Schedule extends Component {
 
   render() {
     const { fetchSchedule, schDate, userId, schedule, isFetching } = this.props;
+
     return (
-      <ShiftCalendar
-        schedule={schedule}
-        text={moment(schDate, 'MMYY').format('MMMM YYYY')}
-        prev={this._prev}
-        next={this._next}
-        isFetching={isFetching}
-      />
+      <View style={{flex: 1}}>
+        <NavigationBar
+          title={{title: 'Schedule', tintColor: 'white'}}
+          tintColor={Colors.brandPrimary}
+        />
+        <ShiftCalendar
+          schedule={schedule}
+          text={moment(schDate, 'MMYY').format('MMMM YYYY')}
+          prev={this._prev}
+          next={this._next}
+          isFetching={isFetching}
+        />
+      </View>
     )
   }
 };

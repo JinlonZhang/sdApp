@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import { push, pop } from '../actions/navActions';
 import React from 'react';
-import { NavigationExperimental } from 'react-native';
+import { NavigationExperimental, Text } from 'react-native';
 import Exchanges from '../components/Exchanges';
 import ExchangeRequest from '../components/ExchangeRequest';
 const {
-  CardStack: NavigationCardStack
+  CardStack: NavigationCardStack, Header: NavigationHeader
 } = NavigationExperimental
 
 const mapStateToProps = (state) => {
@@ -24,6 +24,23 @@ const mapDispatchToProps = (dispatch) => {
 class ExchangesNavContainer extends React.Component {
   constructor(props) {
     super(props);
+  }
+
+  _renderHeader = (props) => {
+    return (
+        <NavigationHeader
+            {...props}
+            renderTitleComponent={this._renderTitleComponent}
+        />
+    );
+    }
+
+  _renderTitleComponent = (props) => {
+    return (
+        <NavigationHeader.Title style={{backgroundColor: 'green'}}>
+            'MyApp'
+        </NavigationHeader.Title>
+    );
   }
 
   _renderScene = (props) => {
@@ -64,6 +81,7 @@ class ExchangesNavContainer extends React.Component {
         navigationState={this.props.navigation}
         onNavigate={this._handleNavigate}
         renderScene={this._renderScene}
+        renderOverlay={props => <NavigationHeader {...props} />}
       />
     );
   }
